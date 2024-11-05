@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Bats Cart</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .bat-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .bat-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .bat-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .buy-now-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buy-now-button:hover {
+            background-color: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .next-button, .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .next-button:hover, .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .summary {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>The Baseball and Softball Bat Experts</h1>
+    <h2>Free Shipping Every Day     <img width="35" height="35" src="https://img.icons8.com/ios-filled/50/delivery--v1.png" alt="delivery--v1"/></h2>
+     <h2>Order within <span style="color:red;">12hours</span> and <span style="color:red;">8 minutes </span>today to ship today</h2>
+    <br> 
+
+    <!-- Section 1: Baseball Bats with Photos -->
+
+    <div id="section-1">
+        <h2>Shop Bats</h2>
+        <div class="bat-list">
+            <div class="bat-item" onclick="selectBat('Louisville Slugger 2025 Dynasty (-3) BBCOR Baseball Bat', 'https://via.placeholder.com/150', 499)">
+                <img src="https://th.bing.com/th/id/OIP._r1881BN0_cdWgTwWkPB5AHaHL?pid=15.1&w=179&h=173.451&c=7&dpr=1.5/150" alt="Louisville Slugger 2025 Bat">
+                <h3>Louisville Slugger 2025 Dynasty (-3) BBCOR Baseball Bats</h3>
+                <p>Price: $499</p>
+                <button class="buy-now-button">Buy Now</button>
+            </div>
+            <div class="bat-item" onclick="selectBat('Rawlings | 2025 | ICON Baseball Bat | USSSA | Coach/Machine Pitch | -13 Drop | 2 5/8 Barrel | 1 Pc. Composite', 'https://via.placeholder.com/150', 140.22)">
+                <img src="https://m.media-amazon.com/images/I/61OUdoY5TPL._AC_SX679_.jpg">
+                <h3>Rawlings | 2025 | ICON Baseball Bat | USSSA | Coach/Machine Pitch | -13 Drop | 2 5/8" Barrel | 1 Pc. Composite</h3>
+                <p>Price: $140.22</p>
+                <button class="buy-now-button">Buy Now</button>
+            </div>
+            <div class="bat-item" onclick="selectBat('023 Vapor (-3) BBCOR Baseball Bat', 'https://via.placeholder.com/150', 175)">
+                <img src="https://m.media-amazon.com/images/I/61vxc9Jjf1L._AC_SX679_.jpg">
+                <h3>2023 Vapor (-3) BBCOR Baseball Bat</h3>
+                <p>Price: $175</p>
+                <button class="buy-now-button">Buy Now</button>
+            </div>
+            <div class="bat-item" onclick="selectBat('Louisville Slugger 2025 Atlas™ (-3) BBCOR Baseball Bat', 'https://via.placeholder.com/150', 266)">
+                <img src="https://th.bing.com/th/id/OIP.5P_yhv7CxEdOs0DzlT96fgHaHa?pid=15.1&w=179&h=179&c=7&dpr=1.5/150" alt="Rawlings 5150 Bat">
+                <h3>Louisville Slugger 2025 Atlas™ (-3) BBCOR Baseball Bat</h3>
+                <p>Price: $266</p>
+                <button class="buy-now-button">Buy Now</button>
+            </div>
+            <div class="bat-item" onclick="selectBat('New Marucci Team MSBT5 Senior League Baseball Bat 2 5/8 White/Black', 'https://via.placeholder.com/150', 279.95)">
+                <img src="https://th.bing.com/th/id/OIP.NYLKPwd-VuvCV29BEeOqzwHaHa?pid=15.1&w=179&h=179&c=7&dpr=1.5/150" alt="Marucci Cat9 Bat">
+                <h3>New Marucci Team MSBT5 Senior League Baseball Bat 2 5/8" White/Black</h3>
+                <p>Price: $279.95</p>
+                <button class="buy-now-button">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Selected Bat Details -->
+    <div id="section-2" class="hidden">
+        <h2>Bat Information</h2>
+        <div class="summary" id="bat-info">
+            <!-- Dynamic Bat Information -->
+
+        </div>
+        <button class="next-button" onclick="showSection('section-3')">Next</button>
+    </div>
+
+    <!-- Section 3: Billing and Delivery Information -->
+    <div id="section-3" class="hidden">
+        <h2>Billing and Delivery Information</h2>
+        <form id="order-form">
+            <h3>Billing Information</h3>
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="billing_address" placeholder="Street Address" required>
+            <input type="text" name="apartment" placeholder="Apartment, Suite, Unit (Optional)">
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State/Province/Region" required>
+            <input type="text" name="zip" placeholder="Zip/Postal Code" required>
+            <input type="text" name="country" placeholder="Country" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number">
+
+            <h3>Delivery Information</h3>
+            <input type="text" name="receiver_name" placeholder="Receiver Name" required>
+            <input type="text" name="delivery_address" placeholder="Delivery Address" required>
+
+            <button type="button" class="next-button" onclick="showSection('section-4')">Next</button>
+        </form>
+    </div>
+
+    <!-- Section 4: Payment Information -->
+<div id="section-4" class="hidden">
+    <h2>Payment Information</h2>
+    <p>Only Bitcoin payments are accepted.</p>
+    <div class="summary">
+        <p>Please send your payment to the following Bitcoin address:</p>
+        <strong id="bitcoin-address">bc1q5n26hr040kp907wfn834tufehp04a44qce0ffz</strong>
+        <button onclick="copyBitcoinAddress()" class="next-button" style="margin-left: 10px;">Copy</button>
+    </div>
+    <button type="button" class="next-button" onclick="showSection('section-5')">Next</button>
+</div>
+
+<script>
+    function copyBitcoinAddress() {
+        // Get the Bitcoin address text
+        const bitcoinAddress = document.getElementById('bitcoin-address').innerText;
+
+        // Copy the text to the clipboard
+        navigator.clipboard.writeText(bitcoinAddress).then(() => {
+            alert('Bitcoin address copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+</script>
+
+
+    <!-- Section 5: Order Review -->
+    <div id="section-5" class="hidden">
+        <h2>Order Review</h2>
+        <div class="summary">
+            <h3>Order Summary</h3>
+            <p id="bat-review">Baseball Bat: Louisvile Slugger 2025 - Quantity: 1</p>
+            <h3>Shipping Method</h3>
+            <p>Standard Shipping</p>
+            <h3>Promo Code</h3>
+            <input type="text" name="promo_code" placeholder="Enter Promo Code (if any)">
+        </div>
+        <button type="button" class="next-button" onclick="showSection('section-6')">Next</button>
+    </div>
+
+    <!-- Section 6: Confirmation and Agreement -->
+    <div id="section-6" class="hidden">
+        <h2>Confirmation and Agreement</h2>
+        <div class="checkbox-group">
+            <input type="checkbox" name="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms and Conditions</a>.</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" name="newsletter">
+            <label for="newsletter">Subscribe to our newsletter.</label>
+        </div>
+        <button type="button" class="submit-button" onclick="submitOrder()">Submit Order</button>
+    </div>
+
+    <!-- Section 7: Confirmation Message -->
+    <div id="section-7" class="hidden">
+        <h2>Thank You for Your Order!</h2>
+        <p>Your order has been submitted successfully. We will contact you soon!</p>
+    </div>
+</div>
+
+<script>
+    let selectedBat = '';
+    let selectedBatPrice = 0;
+
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('div[id^="section-"]');
+        sections.forEach(section => {
+            section.classList.add('hidden');
+        });
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function selectBat(batName, imageUrl, price) {
+        selectedBat = batName;
+        selectedBatPrice = price;
+        document.getElementById('bat-info').innerHTML = `
+            <h3>${batName}</h3>
+            <img src="${imageUrl}" alt="${batName}">
+            <p>Price: $${price.toFixed(2)}</p>
+            <p>Size: 34"/31 oz</p>
+            <p>Material: Metal</p>
+            <p>Size: 34"/31 oz</p>
+<p>Material: Metal</p>
+<p>Barrel Size: 2 5/8 inches</p>
+<p>Drop Weight: -3</p>
+<p>Grip: Cushioned and tacky grip for comfort and control</p>
+<p>Weight: 31 oz</p>
+<p>Length: 34 inches</p>
+<hr>
+<hr>
+<p>Material Composition: Aluminum alloy</p>
+<p>End Cap: Reinforced for balanced weight distribution</p>
+<p>Swing Speed: Designed for balanced or power swings</p>
+<p>Vibration Reduction: Reduces sting on mis-hits</p>
+<p>Barrel Material: Premium alloy for durability</p>
+<p>Certification: BBCOR certified for high school and college play</p>
+<p>Tapered Handle: For better wrist control and grip</p>
+<p>Durability: Dents and crack-resistant construction</p>
+<hr>
+<hr>
+<p>Barrel Length: Extended hitting surface for improved contact</p>
+<p>Pop: High response for powerful hits</p>
+<p>Balanced or End-Loaded: Balanced for better swing speed</p>
+<p>Weather Resistance: Suitable for all weather conditions</p>
+<p>Color Options: Available in Black, Silver, and Red</p>
+<hr>
+<hr>
+<p>Warranty: 1-year manufacturer warranty</p>
+<p>Hand Orientation: Suitable for both right- and left-handed players</p>
+            <p>Balanced Swing Weight, Tuned Mass Damper, and One-Piece Alloy Construction.</p>
+        `;
+        document.getElementById('bat-review').innerHTML = `Baseball Bat: ${batName} - Quantity: 1`;
+        showSection('section-2');
+    }
+
+    function submitOrder() {
+        const form = document.getElementById('order-form');
+        if (form.checkValidity()) {
+            const formData = new FormData(form);
+            const emailBody = Array.from(formData.entries()).map(entry => `${entry[0]}: ${entry[1]}`).join('\n') + `\n\nSelected Bat: ${selectedBat} - Price: $${selectedBatPrice.toFixed(2)}`;
+            window.location.href = `mailto:UltimateBasebesallBat@outlook.com?subject=New Baseball Bat Order&body=${encodeURIComponent(emailBody)}`;
+            showSection('section-7');
+        } else {
+            alert('Please fill out all required fields.');
+        }
+    }
+</script>
+
+</body>
+</html>
